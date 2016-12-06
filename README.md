@@ -10,11 +10,11 @@ Every Event Stream file starts with the following bytes:
 
 | Position      | Content                                                                                      |
 |:-------------:|:--------------------------------------------------------------------------------------------:|
-| Bytes 0 to 11 | `0x45 0x76 0x65 0x6e 0x74 0x20 0x53 0x74 0x72 0x65 0x61 0x6d` ("Event Stream" ascii-encoded) |
+| Bytes 0 to 11 | `0x45 0x76 0x65 0x6e 0x74 0x20 0x53 0x74 0x72 0x65 0x61 0x6d` (_Event Stream_ ascii-encoded) |
 | Byte 12       | Major version number                                                                         |
 | Byte 13       | Minor version number                                                                         |
 
-Bytes from 14 to the end are version dependent. The content description for each version is given below:
+Bytes from 14 to the end are version dependent. The content description for each version is given below.
 
 ## Version 0.1
 
