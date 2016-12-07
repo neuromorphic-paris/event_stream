@@ -18,6 +18,20 @@ Bytes from 14 to the end are version dependent. The content description for each
 
 ## Version 0.1
 
+The file can represent three types of streams: ATIS events, asynchronous screen events and color events. The type is stored in the byte 14:
+
+| Byte 14 | Stream type                |
+|:-------:|:--------------------------:|
+| `0x00`  | ATIS events                |
+| `0x01`  | Asynchronous screen events |
+| `0x02`  | Color events               |
+
+### ATIS events
+
+Each byte from 15 to the end can be any of _byte 0_, _byte 1_, _byte 2_, _reset_ and _overflow_. The possible order of these bytes is given by the state machine:
+
+![stateMachine](stateMachine.png "State machine")
+
 # License
 
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
