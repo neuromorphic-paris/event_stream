@@ -44,7 +44,7 @@ The bytes encode the following data:
 
 _reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent three-by-three, to make sure that at least the third _reset_ is read while in _idle_ state.
 
-_timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by overflow[0], overflow[1], overflow[2] for each _overflow_ event.
+_timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by `overflow[0]`, `overflow[1]`, `overflow[2]` for each _overflow_ event.
 
 ### Asynchronous screen events
 
@@ -64,7 +64,7 @@ The bytes encode the following data:
 
 _reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent three-by-three, to make sure that at least the third _reset_ is read while in _idle_ state.
 
-_timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by overflow[0], overflow[1], overflow[2] for each _overflow_ event.
+_timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by `overflow[0]`, `overflow[1]`, `overflow[2]` for each _overflow_ event.
 
 ### Color events
 
