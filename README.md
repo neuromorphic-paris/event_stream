@@ -18,7 +18,7 @@ Bytes from 14 to the end are version dependent. The content description for each
 
 ## Version 0.1
 
-The file can represent three types of streams: ATIS events, asynchronous screen events and color events. The type is stored in the byte 14:
+The file can represent three types of streams: ATIS events, asynchronous screen events and color events. The type is stored by the byte 14:
 
 | Byte 14 | Stream type                |
 |:-------:|:--------------------------:|
@@ -38,7 +38,7 @@ The bytes encode the following data:
 |:----------:|:------------------------------------------------------------------------------------------------------:|
 | _byte 0_   | `timestamp[0]`, `timestamp[1]`, `timestamp[2]`, `timestamp[3]`, `timestamp[4]`, `x[0]`, `x[1]`, `x[2]` |
 | _byte 1_   | `x[3]`, `x[4]`, `x[5]`, `x[6]`, `x[7]`, `x[8]`, `y[0]`, `y[1]`                                         |
-| _byte 2_   | `y[2]`, `y[3]`, `y[4]`, `y[5]`, `y[6]`, `y[7]`, `isExposureMeasurement`, `polarity`                    |
+| _byte 2_   | `y[2]`, `y[3]`, `y[4]`, `y[5]`, `y[6]`, `y[7]`, `isExposureMeasurement`, `polarity                    |
 | _reset_    | `1`, `1`, `1`, `1`, `1`, `0`, `0`, `0`                                                                 |
 | _overflow_ | `1`, `1`, `1`, `1`, `1`, `overflow[0]`, `overflow[1]`, `overflow[2]`                                   |
 
