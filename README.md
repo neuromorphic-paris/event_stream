@@ -18,7 +18,7 @@ Bytes from 14 to the end are version dependent. The content description for each
 
 ## Version 0.1
 
-The file can represent three types of streams: ATIS events, asynchronous screen events and color events. The type is stored in byte 14, which completes the header:
+The file can represent three types of streams: ATIS events, Asynchronous & Modular Display events and color events. The type is stored in byte 14, which completes the header:
 
 | Byte 14 | Stream type                |
 |:-------:|:--------------------------:|
