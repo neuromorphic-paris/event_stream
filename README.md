@@ -83,7 +83,7 @@ The bytes encode the following data:
 | _byte 4_   | `g[0]`, `g[1]`, `g[2]`, `g[3]`, `g[4]`, `g[5]`, `g[6]`, `g[7]`                                                         |
 | _byte 5_   | `b[0]`, `b[1]`, `b[2]`, `b[3]`, `b[4]`, `b[5]`, `b[6]`, `b[7]`                                                         |
 
-_reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent three-by-three, to make sure that at least the third _reset_ is read while in _idle_ state.
+_reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent six-by-six, to make sure that at least the sixth _reset_ is read while in _idle_ state.
 
 _timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b1111111`. If this time is equal or larger than `0b1111111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b1111111` microseconds multiplied by the number of _overflow_ events.
 
