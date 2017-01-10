@@ -57,7 +57,7 @@ The bytes encode the following data:
 | Byte name  | Bits                                                                                                   |
 |:----------:|:------------------------------------------------------------------------------------------------------:|
 | _byte 0_   | `timestamp[0]`, `timestamp[1]`, `timestamp[2]`, `timestamp[3]`, `timestamp[4]`, `x[0]`, `x[1]`, `x[2]` |
-| _byte 1_   | `y[0]`, `y[1]`, `y[2]`, `intensity[0]`, `intensity[1]`, `intensity[2]`, `intensity[3]`, `intensity[4]`                  |
+| _byte 1_   | `intensity[0]`, `intensity[1]`, `intensity[2]`, `intensity[3]`, `intensity[4]`, `y[0]`, `y[1]`, `y[2]` |
 | _byte 2_   | `fpga_x[0]`, `fpga_x[1]`, `fpga_x[2]`, `fpga_x[3]`, `fpga_y[0]`, `fpga_y[1]`, `fpga_y[2]`, `fpga_y[3]`|
 | _reset_    | `1`, `1`, `1`, `1`, `1`, `0`, `0`, `0`                                                                 |
 | _overflow_ | `1`, `1`, `1`, `1`, `1`, `overflow[0]`, `overflow[1]`, `overflow[2]`                                   |
