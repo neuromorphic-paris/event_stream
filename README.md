@@ -89,4 +89,4 @@ _timestamp_ encodes the time elapsed since the previous event in microseconds, a
 
 # License
 
-See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+See the [LICENSE](LICENSE.txt) file for license rights and limitations (GNU GPLv3).
