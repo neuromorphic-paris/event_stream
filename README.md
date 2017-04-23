@@ -125,11 +125,11 @@ The bytes encode the following data:
 | _byte 1_   | `data[0]`      | `data[1]`      | `data[2]`      | `data[3]`      | `data[4]`      | `data[5]`      | `data[6]`      | `data[7]`  |
 | _byte 2_   | `data[8]`      | `data[9]`      | `data[10]`     | `data[11]`     | `data[12]`     | `data[13]`     | `data[14]`     | `data[15]` |
 | _byte 3_   | `data[16]`     | `data[17]`     | `data[18]`     | `data[19]`     | `data[20]`     | `data[21]`     | `data[22]`     | `data[23]` |
-| _byte 3_   | `data[24]`     | `data[25]`     | `data[26]`     | `data[27]`     | `data[28]`     | `data[29]`     | `data[30]`     | `data[31]` |
-| _byte 3_   | `data[32]`     | `data[33]`     | `data[34]`     | `data[35]`     | `data[36]`     | `data[37]`     | `data[38]`     | `data[39]` |
-| _byte 3_   | `data[40]`     | `data[41]`     | `data[42]`     | `data[43]`     | `data[44]`     | `data[45]`     | `data[46]`     | `data[47]` |
-| _byte 3_   | `data[48]`     | `data[49]`     | `data[50]`     | `data[51]`     | `data[52]`     | `data[53]`     | `data[54]`     | `data[55]` |
-| _byte 3_   | `data[56]`     | `data[57]`     | `data[58]`     | `data[59]`     | `data[60]`     | `data[61]`     | `data[62]`     | `data[63]` |
+| _byte 4_   | `data[24]`     | `data[25]`     | `data[26]`     | `data[27]`     | `data[28]`     | `data[29]`     | `data[30]`     | `data[31]` |
+| _byte 5_   | `data[32]`     | `data[33]`     | `data[34]`     | `data[35]`     | `data[36]`     | `data[37]`     | `data[38]`     | `data[39]` |
+| _byte 6_   | `data[40]`     | `data[41]`     | `data[42]`     | `data[43]`     | `data[44]`     | `data[45]`     | `data[46]`     | `data[47]` |
+| _byte 7_   | `data[48]`     | `data[49]`     | `data[50]`     | `data[51]`     | `data[52]`     | `data[53]`     | `data[54]`     | `data[55]` |
+| _byte 8_   | `data[56]`     | `data[57]`     | `data[58]`     | `data[59]`     | `data[60]`     | `data[61]`     | `data[62]`     | `data[63]` |
 | _reset_    | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `0`        |
 | _overflow_ | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`        |
 
