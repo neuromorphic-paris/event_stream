@@ -27,7 +27,6 @@ The file can represent five types of streams: DVS events, ATIS events, Asynchron
 | `0x02`  | Asynchronous & Modular Display events |
 | `0x03`  | Color events                          |
 | `0x04`  | Generic events                        |
-| `0x05`  | Liquid events                        |
 
 ### DVS events
 
@@ -135,27 +134,6 @@ The bytes encode the following data:
 | _overflow_ | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`        |
 
 _reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent six-by-six, to make sure that at least the sixth _reset_ is read while in _idle_ state.
-
-_timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b1111111`. If this time is equal or larger than `0b1111111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b1111111` microseconds multiplied by the number of _overflow_ events.
-
-### Liquid events
-
-Each byte from 15 to the end can be any of _byte 0_, _byte 1_, _byte 2_, _byte 3_, _byte 4_, _byte 5_, _byte 6_, _byte 7_, _byte 8_, _reset_ and _overflow_. The possible order of these bytes is given by the state machine:
-
-![liquidStateMachine](liquidStateMachine.png "Liquid state machine")
-
-The bytes encode the following data:
-
-| Byte name  | LSB            | Bit 1          | Bit 2          | Bit 3          | Bit 4          | Bit 5          | Bit 6          | MSB        |
-|:-------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:----------:|
-| _byte 0_      | `timestamp[0]` | `timestamp[1]` | `timestamp[2]` | `timestamp[3]` | `timestamp[4]` | `p[0]` | `p[1]` | `p[3]` |
-| _byte 1_      | `x[0]`      | `x[1]`      | `x[2]`      | `x[3]`      | `x[4]`      | `x[5]`      | `x[6]`      | `x[7]`  |
-| _byte 2_      | `y[0]`      | `y[1]`      | `y[2]`      | `y[3]`      | `y[4]`      | `y[5]`      | `y[6]`      | `y[7]`  |
-| _byte 3_      | `z[0]`      | `z[1]`      | `z[2]`      | `z[3]`      | `z[4]`      | `z[5]`      | `z[6]`      | `z[7]`  |
-| _reset_        | `1`            | `1`            | `1`            | `1`            | `1`            | `0`           | `0`           | `0`           |
-| _overflow_  | `1`            | `1`            | `1`            | `1`            | `1`            | `overflow[0]` | `overflow[1]` | `overflow[2]` |
-
-_reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent four-by-four, to make sure that at least the fourth _reset_ is read while in _idle_ state.
 
 _timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b1111111`. If this time is equal or larger than `0b1111111` microseconds, one or serveral _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b1111111` microseconds multiplied by the number of _overflow_ events.
 
