@@ -147,13 +147,13 @@ Each byte from 15 to the end can be any of _byte 0_, _byte 1_, _byte 2_, _byte 3
 The bytes encode the following data:
 
 | Byte name  | LSB            | Bit 1          | Bit 2          | Bit 3          | Bit 4          | Bit 5          | Bit 6          | MSB        |
-|:----------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:----------:|
-| _byte 0_   | `timestamp[0]` | `timestamp[1]` | `timestamp[2]` | `timestamp[3]` | `timestamp[4]` | `p[0]` | `p[1]` | `p[3]` |
-| _byte 1_   | `x[0]`      | `x[1]`      | `x[2]`      | `x[3]`      | `x[4]`      | `x[5]`      | `x[6]`      | `x[7]`  |
-| _byte 2_   | `y[0]`      | `y[1]`      | `y[2]`      | `y[3]`      | `y[4]`      | `y[5]`      | `y[6]`      | `y[7]`  |
-| _byte 3_   | `z[0]`      | `z[1]`      | `z[2]`      | `z[3]`      | `z[4]`      | `z[5]`      | `z[6]`      | `z[7]`  |
-| _reset_    | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `0`        |
-| _overflow_ | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`            | `1`        |
+|:-------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|:----------:|
+| _byte 0_      | `timestamp[0]` | `timestamp[1]` | `timestamp[2]` | `timestamp[3]` | `timestamp[4]` | `p[0]` | `p[1]` | `p[3]` |
+| _byte 1_      | `x[0]`      | `x[1]`      | `x[2]`      | `x[3]`      | `x[4]`      | `x[5]`      | `x[6]`      | `x[7]`  |
+| _byte 2_      | `y[0]`      | `y[1]`      | `y[2]`      | `y[3]`      | `y[4]`      | `y[5]`      | `y[6]`      | `y[7]`  |
+| _byte 3_      | `z[0]`      | `z[1]`      | `z[2]`      | `z[3]`      | `z[4]`      | `z[5]`      | `z[6]`      | `z[7]`  |
+| _reset_        | `1`            | `1`            | `1`            | `1`            | `1`            | `0`           | `0`           | `0`           |
+| _overflow_  | `1`            | `1`            | `1`            | `1`            | `1`            | `overflow[0]` | `overflow[1]` | `overflow[2]` |
 
 _reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent four-by-four, to make sure that at least the fourth _reset_ is read while in _idle_ state.
 
