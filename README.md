@@ -94,11 +94,7 @@ The bytes encode the following data:
 
 _reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent three-by-three, to make sure that at least the third _reset_ is read while in _idle_ state.
 
-<<<<<<< HEAD
 _timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or several _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by `overflow[0]`, `overflow[1]`, `overflow[2]` for each _overflow_ event.
-=======
-_t_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or several _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by `overflow[0]`, `overflow[1]`, `overflow[2]` for each _overflow_ event.
->>>>>>> 106b129b5b93e71626df1e23eb48840b8ff15115
 
 ### Asynchronous & Modular Display events
 
@@ -108,7 +104,6 @@ Bytes 16 to the end can be any of _byte 0_, _byte 1_, _byte 2_, _reset_ and _ove
 
 The bytes encode the following data:
 
-<<<<<<< HEAD
 | Byte name  | Bits                                                                                                   |
 |:----------:|:------------------------------------------------------------------------------------------------------:|
 | _byte 0_   | `timestamp[7]`, `timestamp[6]`, `timestamp[5]`, `timestamp[4]`, `timestamp[3]`, `timestamp[2]`, `timestamp[1]`, `timestamp[0]` |
@@ -119,24 +114,11 @@ The bytes encode the following data:
 | _overflow_ | `timestamp = 0b11111110` |
 
 _stage_ encodes the current level in the pyramid ; by default and outside the display its value should be `0b000` (see asynchronous and modular display documentation for more details).
-=======
-| Byte name  | MSB           | Bit 6         | Bit 5         | Bit 4          | Bit 3          | Bit 2          | Bit 1          | LSB            |
-|:----------:|:-------------:|:-------------:|:-------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
-| _byte 0_   | `x[2]`        | `x[1]`        | `x[0]`        | `t[4]`         | `t[3]`         | `t[2]`         | `t[1]`         | `t[0]`         |
-| _byte 1_   | `y[2]`        | `y[1]`        | `y[0]`        | `intensity[4]` | `intensity[3]` | `intensity[2]` | `intensity[1]` | `intensity[0]` |
-| _byte 2_   | `address[7]`  | `address[6]`  | `address[5]`  | `address[4]`   | `address[3]`   | `address[2]`   | `address[1]`   | `address[0]`   |
-| _reset_    | `0`           | `0`           | `0`           | `1`            | `1`            | `1`            | `1`            | `1`            |
-| _overflow_ | `overflow[2]` | `overflow[1]` | `overflow[0]` | `1`            | `1`            | `1`            | `1`            | `1`            |
->>>>>>> 106b129b5b93e71626df1e23eb48840b8ff15115
 
 _reset_ is a special event inserted when deemed necessary to correct state machine errors resulting from bit errors. _reset_ events are always sent three-by-three, to make sure that at least the third _reset_ is read while in _idle_ state.
 _Note: for the time being a reset is a single 4-bytes event with a timestamp value of `0b11111111` (see asynchronous and modular display documentation for more details)._
 
-<<<<<<< HEAD
 _timestamp_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111110`. If this time is equal or larger than `0b11111110` microseconds, one or several _overflow_ events are inserted before the event.
-=======
-_t_ encodes the time elapsed since the previous event in microseconds, and cannot be `0b11111`. If this time is equal or larger than `0b11111` microseconds, one or several _overflow_ events are inserted before the event. The actual time elapsed since the last event can be computed as the current event's timestamp plus `0b11111` microseconds multiplied by the number represented by `overflow[0]`, `overflow[1]`, `overflow[2]` for each _overflow_ event.
->>>>>>> 106b129b5b93e71626df1e23eb48840b8ff15115
 
 ### Color events
 
