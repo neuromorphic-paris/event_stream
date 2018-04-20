@@ -54,11 +54,13 @@ _t_ encodes the time elapsed since the previous event in microseconds, and canno
 
 Each event's data payload starts with one or several size bytes, which encodes the number of data bytes to be read. The number `n` of data bytes to read is given by:
 ```
-n = ∑ ((s_i & 0b11111110) >> 1) << (7 * i)
+n = ∑ (s_i) << (7 * i)
 ```
-where `s_i, i ∈ [0, k - 1]` denotes the (i + 1)th size byte, and `k` the number of size bytes. The minimum number of size bytes depends on the number of data bytes. Events of the same stream can have different numbers of data bytes and different numbers of size bytes. `n` data bytes require at least `Γlb(n + 1) / 7⅂` size bytes, where `Γ…⅂` is the ceil function and `lb(…)` is the binary logarithm. Applications or devices generating generic events are encouraged to use this minimal number, though the Event Stream specification allows a larger number of size bytes.
+where `s_i, i ∈ [0, k - 1]` denotes the (i + 1)th `s` value, and `k` the number of size bytes. The minimum number of size bytes depends on the number of data bytes. Events of the same stream can have different numbers of data bytes and different numbers of size bytes. `n` data bytes require at least `Γlb(n + 1) / 7⅂` size bytes, where `Γ…⅂` is the ceil function and `lb(…)` is the binary logarithm. Applications or devices generating generic events are encouraged to use this minimal number, though the Event Stream specification allows a larger number of size bytes.
 
 `is_last` equals `0` for the last size byte before data bytes, and `1` otherwise.
+
+`d` encodes user-provided data.
 
 ### DVS events
 
